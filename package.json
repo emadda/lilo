@@ -1,0 +1,22 @@
+{
+    "name": "lilo-cli",
+    "description": "CLI to download your Google Cloud Platform Logs to a SQLite database.",
+    "version": "0.0.1",
+    "module": "src/cli.ts",
+    "type": "module",
+    "bin": {
+        "lilo": "./src/lilo.ts"
+    },
+    "devDependencies": {
+        "bun-types": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "minimist": "^1.2.8",
+        "zod": "^3.21.4"
+    },
+    "license": "MIT"
+}

@@ -1,0 +1,41 @@
+lilo - Lite Logs.
+
+Download your Google Cloud Platform logs to a SQLite file.
+
+https://github.com/emadda/lilo
+
+Commands and flags
+
+	download (default, implicit)
+
+		--resource-names 'projects/1'
+		--resource-names '["projects/1","projects/2"]'
+		
+			Examples:
+				projects/[PROJECT_ID]
+				organizations/[ORGANIZATION_ID]
+				billingAccounts/[BILLING_ACCOUNT_ID]
+				folders/[FOLDER_ID]
+
+			See: https://cloud.google.com/logging/docs/reference/v2/rest/v2/entries/list#request-body
+
+
+		--filter "GCP logging filter"
+
+			See: https://cloud.google.com/logging/docs/view/logging-query-language
+			You may want to store your filter in a txt file and read it with `filter=$(cat filter.txt)`, and then pass it to `lilo` in a bash script with `--filter "$filter"`
+
+		--db ./db.sqlite
+
+			Where you want your logs to be written to on the local disk.
+			Can be an existing file to resume a previous download from the last log.
+
+		--watch
+		--watch 1000
+
+			Tail the logs and write them to the DB as they arrive, waiting x milliseconds after each request completes to fetch again.
+			Defaults to 2000ms.
+
+
+	help
+	version
