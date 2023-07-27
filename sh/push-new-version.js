@@ -5,9 +5,10 @@
 // - Copies tag from package.json to git tag, pushes to remote.
 // - Pushes version to npm.
 
-const fs = require("fs");
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+import fs from "fs";
+import util from "util";
+import {exec as exec0} from "child_process";
+const exec = util.promisify(exec0);
 
 const github_repo = `https://github.com/emadda/lilo`;
 

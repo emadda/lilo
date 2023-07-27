@@ -2,7 +2,7 @@ import _ from "lodash";
 import {z} from "zod";
 import minimist from "minimist";
 
-import {sleep} from "./lib/util";
+import {is_dev, sleep} from "./lib/util";
 import {get_ins, params, to_params_obj} from "./lib-app/db-ins";
 import {get_cols} from "./lib-app/config";
 import {get_all} from "./lib/gcp/logs-read";
@@ -311,7 +311,7 @@ const run = async () => {
     db_ins.t.runs.update_end_now(params({run_id}));
 }
 
-console.log("Started");
+console.log("Started", {is_dev: is_dev()});
 
 await run();
 // await list_log_entries();

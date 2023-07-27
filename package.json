@@ -1,7 +1,7 @@
 {
     "name": "lilo-cli",
     "description": "CLI to download your Google Cloud Platform Logs to a SQLite database.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "module": "src/cli.ts",
     "type": "module",
     "bin": {

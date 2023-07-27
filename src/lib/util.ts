@@ -1,13 +1,9 @@
 const is_dev = () => {
-    const is_env_set = "NODE_ENV" in process.env;
+    // process.env["NODE_ENV"]
+    // - Bun replaces this with "development" by default.
+    // - "production" cannot be set via shebang or via package.json `bin` value.
 
-    if (!is_env_set) {
-        return true;
-    }
-
-    return (
-        process.env["NODE_ENV"] === 'development'
-    )
+    return false;
 }
 
 
